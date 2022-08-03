@@ -11,8 +11,12 @@ int main() {
         std::cin >> temp;
 
         if (temp == "Next" ) {
+            if(n == 0){
+               std::cout << "no visitors!\n";
+            }else {
             std::cout << it  -> first << std::endl;
-           if(it!=registry.end()) {registry.erase(it);it = registry.begin();}
+           if(it!=registry.end()) {registry.erase(it);it = registry.begin();n--;}
+            }
         } else {
             registry.insert(std::make_pair(temp,temp));
             it = registry.begin () ;
